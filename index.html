@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi Valentín?</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.3);
+            animation: aparecer 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: #ff4d6d;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                transform: scale(1.1);
+            }
+
+        .flores {
+            position: absolute;
+            bottom: -100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            animation: subir 6s infinite linear;
+        }
+
+            .flores img {
+                width: 100px;
+            }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes subir {
+            0% {
+                bottom: -100px;
+            }
+
+            100% {
+                bottom: 110%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Para: <span id="nombre">Michelle Baltodano</span> 💖</h1>
+        <p id="mensaje">
+            Desde que llegaste a mi vida todo es más bonito.
+            ¿Te gustaría ser mi 14 de febrero, mi Valentín? 🌹
+        </p>
+
+        <button onclick="cambiarMensaje()">Haz clic aquí ❤️</button>
+    </div>
+
+    <div class="flores">
+        <img src="https://i.imgur.com/9QZ4F2Y.png">
+        <img src="https://i.imgur.com/1Xc9XxL.png">
+        <img src="https://i.imgur.com/9QZ4F2Y.png">
+    </div>
+
+    <script>
+        function cambiarMensaje() {
+            document.getElementById("mensaje").innerHTML =
+                "Prometo llevarte flores rojas, tulipanes hermosos y llenarte de abrazos. 🌷❤️ ¿Aceptas ser mi Valentín?";
+        }
+    </script>
+
+</body>
+</html>
